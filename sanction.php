@@ -35,10 +35,13 @@ $color="navbar-light orange darken-4";
                 <div id="alertText"> &nbsp </div>
                 <img id="qrious">
                 <div id="bottomText" style="margin-top: 10px; margin-bottom: 15px;"> &nbsp </div>
-               <a href="manage.php"> <button id="closebutton" class="formbtn"> Send Notification </button> </a>
+                <a href="mailto:foodereum@googlegroups.com"> <button id="mail" class="formbtn"> Mail QR Code </button> </a>
+               <button id="closebutton" class="formbtn"> OK </button>
+               <br><a href="manage.php"> <button id="notif" class="formbtn"> Send Notification </button> </a>
             </div>
         </div>
     </center>
+
 
     <div class="bgrolesadd">
       <center>
@@ -137,6 +140,8 @@ $color="navbar-light orange darken-4";
               $("#qrious").show();
 
               $("#bottomText").html($bottom);
+              $("#closebutton").hide();
+              $("#notif").show();
               $(".customalert").show("fast","linear");
           });
         });
@@ -206,6 +211,9 @@ $color="navbar-light orange darken-4";
       $("#alertText").html(message);
       $("#qrious").hide();
       $("#bottomText").hide();
+      $("#notif").hide();
+      $("#mail").hide();
+      $("#closebutton").show();
       $(".customalert").show("fast","linear");
     }
 

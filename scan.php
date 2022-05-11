@@ -33,7 +33,7 @@ $color="navbar-dark cyan darken-3";
                 <div id="alertText"> &nbsp </div>
                 <img id="qrious">
                 <div id="bottomText" style="margin-top: 10px; margin-bottom: 15px;"> &nbsp </div>
-                <button id="closebutton" class="formbtn"> Done </button>
+                <button id="closebutton" class="formbtn"> OK </button>
             </div>
         </div>
     </center>
