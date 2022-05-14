@@ -18,6 +18,35 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <title>Foodereum - Track Products</title>
+
+    <style>  
+    
+      .scrollbar{
+          height: 350px;
+          width: 40%;
+          padding: 15px;
+          background: #fff;
+          overflow-y: scroll;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.20), 0 3px 6px rgba(0,0,0,0.23);
+      }
+        
+        
+      .scrollbar-primary::-webkit-scrollbar {
+          width: 7px;
+          background-color: #F5F5F5;
+      }
+        
+      .scrollbar-primary::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+          background-color: #ffee00;
+      }
+        
+      .scrollbar-primary {
+          scrollbar-color: #ffee00 #F5F5F5;
+      }
+  
+    </style>
   </head>
   
   
@@ -46,7 +75,7 @@
       <center>
         <div class="centered">
           <form role="form" autocomplete="off">
-            <h3>Track Product Here.</h3>
+            <h3 style="margin-top: 80px;">Track Product Here.</h3>
               <input type="text" id="searchText" class="searchBox" placeholder="Enter Product ID To Track" onkeypress="isInputNumber(event)" required>
               <label class=qrcode-text-btn style="width:4%;display:none;">
 				        <input type=file accept="image/*" id="selectedFile" style="display:none" capture=environment onchange="openQRCamera(this);" tabindex=-1>
@@ -59,8 +88,8 @@
 		        <i class='fa fa-qrcode'></i> Scan QR
 		      </button>
 	
-          <br><br>
-          <p id="database" class="cardstyle">
+          <br>
+          <p id="database" class="scrollbar scrollbar-primary">
             No Data to Display
           </p>
         </div>
@@ -100,7 +129,7 @@
       // Set the Contract
       var contract = new web3.eth.Contract(contractAbi, contractAddress);
 
-      $(".cardstyle").hide();
+      $(".scrollbar").hide();
       
       $('form').on('submit', function(event) {
         event.preventDefault(); // to prevent page reload when form is submitted
@@ -110,7 +139,7 @@
 
         contract.methods.searchProduct(greeting).call(function(err, result) {
           console.log(err, result)
-          $(".cardstyle").show("fast","linear");
+          $(".scrollbar").show("fast","linear");
           $("#database").html(result);
         });
 
