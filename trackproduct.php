@@ -25,6 +25,7 @@
           height: 350px;
           width: 40%;
           padding: 15px;
+          border-radius: 20px;
           background: #fff;
           overflow-y: scroll;
           box-shadow: 0 3px 6px rgba(0,0,0,0.20), 0 3px 6px rgba(0,0,0,0.23);
@@ -39,11 +40,11 @@
       .scrollbar-primary::-webkit-scrollbar-thumb {
           border-radius: 10px;
           -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
-          background-color: #ffee00;
+          background-color: #000000;
       }
         
       .scrollbar-primary {
-          scrollbar-color: #ffee00 #F5F5F5;
+          scrollbar-color: #000000 #F5F5F5;
       }
   
     </style>
